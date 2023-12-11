@@ -32,23 +32,23 @@ const App = () => {
   return (
     <View style={{flex: 1, padding: 24}}>
 
-<Picker
-  selectedValue={selectedEteltipusok}
-  onValueChange={(itemValue, itemIndex) =>
-    setSelectedEteltipusok(itemValue)
-  }>
-{data.map((item)=>{
+      <Picker
+        selectedValue={selectedEteltipusok}
+        onValueChange={(itemValue, itemIndex) =>
+        setSelectedEteltipusok(itemValue)
+      }>
+      {data.map((item)=>{
         return(
-            <Picker.Item label={item.eteltipusok_nev} value={item.eteltipusok_id} />
+          <Picker.Item label={item.eteltipusok_nev} value={item.eteltipusok_id} />
         
-	)}
-	)}
+	    )}
+	    )}
 
 
-</Picker>
+      </Picker>
 
 
-<Button
+      <Button
         onPress={() => kattintas()}
         title="Teszt"
       />

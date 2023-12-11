@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Image, View, Text, TextInput,} from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+import {Picker} from '@react-native-picker/picker';
 import Ipcim from './Ipcim';
 
 export default function ImagePickerExample() {
+  //kép backend----
   const [image, setImage] = useState(null);
   const [bevitel1, setBevitel1] = useState('');
   const SERVER_URL = Ipcim.Ipcim;
@@ -23,7 +25,31 @@ export default function ImagePickerExample() {
 
     return data;
   };
+  //kép backend vége----
 
+  //ételtípusok backend---------
+  const [isLoading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+  const [selectedEteltipusok, setSelectedEteltipusok] = useState();
+
+  const getMovies = async () => {
+    try {
+      const response = await fetch(Ipcim.Ipcim + 'eteltipusok');
+      const json = await response.json();
+      setData(json);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getMovies();
+  }, []);
+  //ételtípusok backend vége---------
+
+  //kép kiválasztás-------
   const handleUploadPhoto = async () => {
     try {
       if (!image) {
@@ -62,6 +88,7 @@ export default function ImagePickerExample() {
       setImage(result);
     }
   };
+  //kép kiválasztás vége-------
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -72,7 +99,21 @@ export default function ImagePickerExample() {
         onChangeText={newText => setBevitel1(newText)}
         defaultValue={bevitel1}
         />
+
+      <Picker
+        style={{ height: 50, width: 150, backgroundColor:"lightgreen", marginTop:10, marginBottom:10}}
+        selectedValue={selectedEteltipusok}
+        onValueChange={(itemValue, itemIndex) =>
+        setSelectedEteltipusok(itemValue)
+      }>
+      {data.map((item)=>{
+        return(
+          <Picker.Item label={item.eteltipusok_nev} value={item.eteltipusok_id} />
         
+	    )}
+	    )}
+      </Picker>
+
         <Button title="Kép kiválasztása" onPress={pickImage} />
         <Button title="Fotó feltöltés" onPress={handleUploadPhoto} />
         
