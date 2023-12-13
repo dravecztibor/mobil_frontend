@@ -92,13 +92,13 @@ export default function ImagePickerExample() {
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text style={{padding: 10, fontWeight:"bold"}}>név:</Text>
-        <TextInput
+      <Text style={{padding: 10, fontWeight:"bold"}}>név:</Text>
+      <TextInput
         style={{height: 40, margin:5, backgroundColor:"lightgreen"}}
         placeholder="Adj meg egy nevet!"
         onChangeText={newText => setBevitel1(newText)}
         defaultValue={bevitel1}
-        />
+      />
 
       <Picker
         style={{ height: 50, width: 150, backgroundColor:"lightgreen", marginTop:10, marginBottom:10}}
@@ -108,9 +108,8 @@ export default function ImagePickerExample() {
       }>
       {data.map((item)=>{
         return(
-          <Picker.Item label={item.eteltipusok_nev} value={item.eteltipusok_id} />
-        
-	    )}
+          <Picker.Item label={item.eteltipusok_nev} value={item.eteltipusok_id} /> 
+	      )}
 	    )}
       </Picker>
 
