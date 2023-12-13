@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {ActivityIndicator, FlatList, Text, View, Image,} from 'react-native';
+import {ActivityIndicator, FlatList, Text, View, Image, Button} from 'react-native';
 import Ipcim from './Ipcim';
 
-const App = () => {
+const App = ({navigation}) => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
@@ -51,13 +51,13 @@ const App = () => {
                     </Text>
 
                     <Image source={{uri: Ipcim.Ipcim + `${item.etelek_kep}`}} style={{
-                        width:300, 
-                        height:300, 
-                        alignItems:"center", 
-                        marginLeft:30, 
-                        marginBottom:20, 
-                        marginTop:20,}}
-                        />
+                      width:300, 
+                      height:300, 
+                      alignItems:"center", 
+                      marginLeft:30, 
+                      marginBottom:20, 
+                      marginTop:20,}}
+                    />
 
                 </View>
             </View>

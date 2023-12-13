@@ -11,6 +11,8 @@ import Proba3 from "./Eteltipusok"
 import Kep from "./Kep"
 import Felvitel from "./Felvitel"
 import Lenyilo from "./Lenyilo"
+import Kozosscreen from "./Etelek2"
+import Ujlap from "./Reszletek"
 
 function HomeScreen({ navigation }) {
   return (
@@ -19,10 +21,10 @@ function HomeScreen({ navigation }) {
         onPress={() => navigation.navigate('Notifications')}
         title="Go to notifications"
       />
-      <Button
+      {/*<Button
         onPress={() => navigation.navigate('Proba')}
         title="Próba képernyő"
-      />
+      />*/}
     </View>
   );
 }
@@ -52,7 +54,8 @@ function Root ({navigation}){
     <Drawer.Navigator initialRouteName="Home">
       <Drawer.Screen name="Home" component={HomeScreen} />
       <Drawer.Screen name="Notifications" component={NotificationsScreen} />
-      <Drawer.Screen name="Ételek" component={Etelek} />
+      <Drawer.Screen name="Ételek" component={Kozosscreen} />
+      {/*<Drawer.Screen name="Ételek" component={Etelek} />*/}
       <Drawer.Screen name="Ételtípusok" component={Eteltipusok} />
       {/*<Drawer.Screen name="Képfeltöltés" component={Kep} />*/}
       <Drawer.Screen name="Felvitel" component={Felvitel} />
@@ -70,6 +73,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Root" component={Root} options={{headerShown:false}} />
         <Stack.Screen name="Proba" component={Proba} />
+        <Stack.Screen name="Részletek" component={Ujlap} />
       </Stack.Navigator>
     </NavigationContainer>
   );
