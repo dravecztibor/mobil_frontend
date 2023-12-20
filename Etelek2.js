@@ -12,9 +12,11 @@ const Kozosscreen = ({navigation}) => {
       const response = await fetch(Ipcim.Ipcim + 'etelek');
       const json = await response.json();
       setData(json);
-    } catch (error) {
+    } 
+    catch (error) {
       console.error(error);
-    } finally {
+    } 
+    finally {
       setLoading(false);
     }
   };
@@ -48,12 +50,12 @@ const Kozosscreen = ({navigation}) => {
                 </Text>
 
                 <Image source={{uri: Ipcim.Ipcim + `${item.etelek_kep}`}} style={{
-                    width:300, 
-                    height:300, 
-                    alignItems:"center", 
-                    marginLeft:30, 
-                     marginBottom:20, 
-                    marginTop:20,}}
+                  width:300, 
+                  height:300, 
+                  alignItems:"center", 
+                  marginLeft:30, 
+                  marginBottom:20, 
+                  marginTop:20,}}
                 />
 
                 <Button

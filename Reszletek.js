@@ -1,16 +1,17 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet, Image } from 'react-native';
+import { View, Text, Button, StyleSheet, Image, ScrollView } from 'react-native';
 import Ipcim from './Ipcim';
 
 const Ujlap = ({route}) => {
   const {atkuld1, atkuld2, atkuld3, atkuld4, atkuld5} = route.params
 
   return (
-    <View style={styles.container}>
+    <ScrollView>
+      <View style={styles.container}>
         {/*<Text>{atkuld1}</Text>*/}
-        <Text style={{height:50, textTransform:"uppercase", fontStyle:"italic", fontWeight:"bold", color:"green"}}>{atkuld2}</Text>
+        <Text style={{height:30, textTransform:"uppercase", fontStyle:"italic", fontWeight:"bold", color:"green"}}>{atkuld2}</Text>
 
-        <Text style={{marginBottom:5}}>Hozzávalók:</Text>
+        <Text style={{marginTop:10, marginBottom:5}}>Hozzávalók:</Text>
         <Text>{atkuld3}</Text>
 
         <Text style={{marginTop:10, marginBottom:5}}>Allergének:</Text>
@@ -19,6 +20,7 @@ const Ujlap = ({route}) => {
         <Text style={{marginTop:10, marginBottom:5}}>Elkészítés:</Text>
         <Text>{atkuld5}</Text>
     </View>
+    </ScrollView>
   );
 };
 
