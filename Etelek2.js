@@ -35,17 +35,17 @@ const Kozosscreen = ({navigation}) => {
           keyExtractor={({id}) => id}
           renderItem={({item}) => (
             <View style={{
-                borderWidth:3, 
-                marginBottom:10, 
-                backgroundColor:"lightgreen",}}>
+              borderWidth:3, 
+              marginBottom:10, 
+              backgroundColor:"lightgreen",}}>
                 <Text style={{
-                        color:"brown", 
-                        fontSize:20, textAlign:"center", 
-                        marginTop:20, 
-                        marginBottom:5, 
-                        color:"yellow", 
-                        fontWeight:"bold", 
-                        fontStyle:"italic"}}>
+                  color:"brown", 
+                  fontSize:20, textAlign:"center", 
+                  marginTop:20, 
+                  marginBottom:5, 
+                  color:"yellow", 
+                  fontWeight:"bold", 
+                  fontStyle:"italic"}}>
                     {item.etelek_nev}
                 </Text>
 
@@ -59,8 +59,8 @@ const Kozosscreen = ({navigation}) => {
                 />
 
                 <Button
-                    onPress={() => navigation.navigate("Részletek", {atkuld1:item.etelek_id, atkuld2:item.etelek_nev, atkuld3:item.etelek_hozzavalok, atkuld4:item.etelek_allergenek, atkuld5:item.etelek_elkeszites})}
-                    title="Részletek"
+                  onPress={() => navigation.navigate("Részletek", {atkuld1:item.etelek_id, atkuld2:item.etelek_nev, atkuld3:item.etelek_hozzavalok, atkuld4:item.etelek_allergenek, atkuld5:item.etelek_elkeszites})}
+                  title="Részletek"
                 />
             </View>
           )}
