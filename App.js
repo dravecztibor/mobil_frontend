@@ -13,6 +13,7 @@ import Felvitel from "./Felvitel"
 import Lenyilo from "./Lenyilo"
 import Kozosscreen from "./Etelek2"
 import Ujlap from "./Reszletek"
+import Video from "./Video"
 
 function HomeScreen({ navigation }) {
   return (
@@ -60,6 +61,7 @@ function Root ({navigation}){
       {/*<Drawer.Screen name="Képfeltöltés" component={Kep} />*/}
       <Drawer.Screen name="Felvitel" component={Felvitel} />
       {/*<Drawer.Screen name="Lenyíló" component={Lenyilo} />*/}
+      {/*<Drawer.Screen name="Videók" component={Video} />*/}
     </Drawer.Navigator>
   )
 }

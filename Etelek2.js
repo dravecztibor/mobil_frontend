@@ -50,8 +50,8 @@ const Kozosscreen = ({navigation}) => {
                 </Text>
 
                 <Image source={{uri: Ipcim.Ipcim + `${item.etelek_kep}`}} style={{
-                  width:300, 
-                  height:300, 
+                  width:270, 
+                  height:270, 
                   alignItems:"center", 
                   marginLeft:30, 
                   marginBottom:20, 
@@ -59,7 +59,7 @@ const Kozosscreen = ({navigation}) => {
                 />
 
                 <Button
-                  onPress={() => navigation.navigate("Részletek", {atkuld1:item.etelek_id, atkuld2:item.etelek_nev, atkuld3:item.etelek_hozzavalok, atkuld4:item.etelek_allergenek, atkuld5:item.etelek_elkeszites})}
+                  onPress={() => navigation.navigate("Részletek", {atkuld1:item.etelek_id, atkuld2:item.etelek_nev, atkuld3:item.etelek_hozzavalok, atkuld4:item.etelek_allergenek, atkuld5:item.etelek_elkeszites, atkuld6:item.etelek_video})}
                   title="Részletek"
                 />
             </View>
