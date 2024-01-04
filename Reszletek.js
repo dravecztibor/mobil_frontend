@@ -24,8 +24,8 @@ const Ujlap = ({route}) => {
         <Text style={{marginTop:10, marginBottom:5}}>Elkészítés:</Text>
         <Text>{atkuld5}</Text>
 
-
-       
+        <Text style={{marginTop:10, marginBottom:5}}>Videó az elkészítéshez:</Text>
+        <WebView source={{ uri: atkuld6 }} style={{ flex: 1, padding: 150, }}/>
     
 
     </View>
