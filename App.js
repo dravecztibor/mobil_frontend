@@ -57,13 +57,14 @@ function Root ({navigation}){
       <Drawer.Screen name="Home" component={HomeScreen} />
       <Drawer.Screen name="Notifications" component={NotificationsScreen} />
       <Drawer.Screen name="Ételek" component={Kozosscreen} />
-      {/*<Drawer.Screen name="Ételek" component={Etelek} />*/}
-      <Drawer.Screen name="Ételtípusok" component={Eteltipusok} />
-      {/*<Drawer.Screen name="Képfeltöltés" component={Kep} />*/}
+      <Drawer.Screen name="Keresés" component={Keresszoveg} />
       <Drawer.Screen name="Felvitel" component={Felvitel} />
+      {/*<Drawer.Screen name="Ételek" component={Etelek} />*/}
+      {/*<Drawer.Screen name="Ételtípusok" component={Eteltipusok} />*/}
+      {/*<Drawer.Screen name="Képfeltöltés" component={Kep} />*/}
       {/*<Drawer.Screen name="Lenyíló" component={Lenyilo} />*/}
       {/*<Drawer.Screen name="Videók" component={Video} />*/}
-      <Drawer.Screen name="Keresés" component={Keresszoveg} />
+      
     </Drawer.Navigator>
   )
 }

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {ActivityIndicator, FlatList, Text, View, TextInput, Button} from 'react-native';
+import {ActivityIndicator, FlatList, Text, View, TextInput, Button,} from 'react-native';
 import Ipcim from './Ipcim';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const App = () => {
   const [isLoading, setLoading] = useState(true);
@@ -24,7 +25,7 @@ const App = () => {
   }, []);
 
   const keresfuggveny = async () => {
-    alert(text)
+    //alert(text)
     var adatok = {
         "bevitel1":text
     }
@@ -34,10 +35,10 @@ const App = () => {
             method: "POST",
             body: JSON.stringify(adatok),
             headers: {"Content-type": "application/json; charset=UTF-8"}
-          }
+        }
         );
         const json = await response.json();
-        setData(json.movies);
+        setData(json);
       } 
     catch (error) {
         console.error(error);

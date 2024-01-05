@@ -21,7 +21,7 @@ const App = () => {
   };
 
   const kattintas=()=>{
-    alert(selectedEteltipusok)
+    //alert(selectedEteltipusok)
   }
 
 
