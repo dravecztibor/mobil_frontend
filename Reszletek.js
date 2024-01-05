@@ -10,9 +10,8 @@ const Ujlap = ({route}) => {
     <ScrollView>
       <View style={styles.container}>
       
-
-
         {/*<Text>{atkuld1}</Text>*/}
+        
         <Text style={{height:30, textTransform:"uppercase", fontStyle:"italic", fontWeight:"bold", color:"green"}}>{atkuld2}</Text>
 
         <Text style={{marginTop:10, marginBottom:5}}>Hozzávalók:</Text>
@@ -25,7 +24,7 @@ const Ujlap = ({route}) => {
         <Text>{atkuld5}</Text>
 
         <Text style={{marginTop:10, marginBottom:5}}>Videó az elkészítéshez:</Text>
-        <WebView source={{ uri: atkuld6 }} style={{ flex: 1, padding: 150, }}/>
+        <WebView source={{ uri: atkuld6 }} style={{ flex: 1, padding: 150,}}/>
     
 
     </View>
