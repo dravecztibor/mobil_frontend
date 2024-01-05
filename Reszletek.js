@@ -11,19 +11,62 @@ const Ujlap = ({route}) => {
       <View style={styles.container}>
       
         {/*<Text>{atkuld1}</Text>*/}
-        
-        <Text style={{height:30, textTransform:"uppercase", fontStyle:"italic", fontWeight:"bold", color:"green"}}>{atkuld2}</Text>
 
-        <Text style={{marginTop:10, marginBottom:5}}>Hozzávalók:</Text>
+        <Text 
+        style={{
+          height:30, 
+          textTransform:"uppercase", 
+          fontStyle:"italic", 
+          fontWeight:"bold",
+          color:"darkgreen",
+        }}
+        >{atkuld2}</Text>
+
+
+        <Text 
+        style={{
+          marginTop:10, 
+          marginBottom:5, 
+          textAlign:"center", 
+          fontWeight:"bold", 
+          fontStyle:"italic", 
+          textDecorationLine:"underline",
+        }}
+        >Hozzávalók:</Text>
         <Text>{atkuld3}</Text>
 
-        <Text style={{marginTop:10, marginBottom:5}}>Allergének:</Text>
+        
+        <Text style={{marginTop:10, 
+          marginBottom:5, 
+          textAlign:"center", 
+          fontWeight:"bold", 
+          fontStyle:"italic",
+          textDecorationLine:"underline",
+        }}
+        >Allergének:</Text>
         <Text>{atkuld4}</Text>
         
-        <Text style={{marginTop:10, marginBottom:5}}>Elkészítés:</Text>
+        
+        <Text style={{
+          marginTop:10, 
+          marginBottom:5, 
+          textAlign:"center", 
+          fontWeight:"bold", 
+          fontStyle:"italic", 
+          textDecorationLine:"underline",
+        }}
+          >Elkészítés:</Text>
         <Text>{atkuld5}</Text>
 
-        <Text style={{marginTop:10, marginBottom:5}}>Videó az elkészítéshez:</Text>
+
+        <Text style={{
+          marginTop:10, 
+          marginBottom:5, 
+          fontWeight:"bold", 
+          fontStyle:"italic", 
+          textDecorationLine:"underline",
+        }}
+          >Videó az elkészítéshez:</Text>
         <WebView source={{ uri: atkuld6 }} style={{ flex: 1, padding: 150,}}/>
     
 
@@ -37,11 +80,19 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    marginLeft: 5,
-    marginRight: 5,
-    marginBottom: 5,
-    marginTop: 5,
+    marginLeft: 10,
+    marginRight: 10,
+    marginBottom: 10,
+    marginTop: 10,
+    borderWidth: 3,
+    backgroundColor: "lightgreen",
+    paddingBottom: 10,
+    paddingTop: 10,
+    paddingRight: 10,
+    paddingLeft: 10,
+
   },
+
 });
 
 export default Ujlap;
