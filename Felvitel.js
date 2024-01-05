@@ -70,9 +70,11 @@ export default function ImagePickerExample() {
       }
 
       const data = await response.json();
-      console.log('response', data);
+      console.log('Sikeres feltöltés', data);
+      alert("Sikeres feltöltés")
     } catch (error) {
-      console.log('error', error.message);
+      console.log('Hiba', error.message);
+      alert("Hiba")
     }
   };
 
@@ -92,6 +94,7 @@ export default function ImagePickerExample() {
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text style={{padding: 10, fontWeight:"bold"}}>név:</Text>
       <TextInput
         style={{height: 40, margin:5,}}
         placeholder="Adj meg egy nevet!"

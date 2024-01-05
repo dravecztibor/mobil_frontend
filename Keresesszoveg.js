@@ -70,7 +70,7 @@ const App = () => {
           keyExtractor={({id}) => id}
           renderItem={({item}) => (
             <Text>
-              {item.etelek_nev}
+              {item.etelek_nev},
             </Text>
           )}    
         />
