@@ -4,7 +4,7 @@ import Ipcim from './Ipcim';
 import { WebView } from 'react-native-webview';
 
 const Ujlap = ({route}) => {
-  const {atkuld1, atkuld2, atkuld3, atkuld4, atkuld5, atkuld6} = route.params
+  const {atkuld1, atkuld2, atkuld3, atkuld4, atkuld5, atkuld6, atkuld7} = route.params
 
   return (
     <ScrollView>
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingRight: 10,
     paddingLeft: 10,
-
+    padding: 20,
   },
 
 });

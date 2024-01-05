@@ -59,7 +59,7 @@ const Kozosscreen = ({navigation}) => {
                 />
 
                 <Button
-                  onPress={() => navigation.navigate("Részletek", {atkuld1:item.etelek_id, atkuld2:item.etelek_nev, atkuld3:item.etelek_hozzavalok, atkuld4:item.etelek_allergenek, atkuld5:item.etelek_elkeszites, atkuld6:item.etelek_video})}
+                  onPress={() => navigation.navigate("Részletek", {atkuld1:item.etelek_id, atkuld2:item.etelek_nev, atkuld3:item.etelek_hozzavalok, atkuld4:item.etelek_allergenek, atkuld5:item.etelek_elkeszites, atkuld6:item.etelek_video, atkuld7:item.etelek_kep})}
                   title="Részletek"
                 />
             </View>
