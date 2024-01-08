@@ -2,27 +2,28 @@ import React, { useState, useEffect } from 'react';
 import { Button, Image, View, Text, TextInput,} from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import {Picker} from '@react-native-picker/picker';
+import { Platform } from 'react-native';
+
 import Ipcim from './Ipcim';
 
 export default function ImagePickerExample() {
   //kép backend----
   const [image, setImage] = useState(null);
-  const [bevitel1, setBevitel1] = useState('');
   const SERVER_URL = Ipcim.Ipcim;
 
   const createFormData = (photo, body = {}) => {
     const data = new FormData();
-
+  
     data.append('photo', {
       name: 'photo.jpg',
       type: 'image/jpg',
       uri: Platform.OS === 'ios' ? photo.uri.replace('file://', '') : photo.uri,
     });
-
+  
     Object.keys(body).forEach((key) => {
       data.append(key, body[key]);
     });
-
+  
     return data;
   };
   //kép backend vége----
@@ -30,7 +31,7 @@ export default function ImagePickerExample() {
   //ételtípusok backend---------
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
-  const [selectedEteltipusok, setSelectedEteltipusok] = useState();
+  const [bevitel2, setBevitel2] = useState();
 
   const getMovies = async () => {
     try {
@@ -49,6 +50,31 @@ export default function ImagePickerExample() {
   }, []);
   //ételtípusok backend vége---------
 
+  //ételek backend----------
+  const [isLoading2, setLoading2] = useState(true);
+  const [data2, setData2] = useState([]);
+  const [bevitel1, setBevitel1] = useState('');
+  const [bevitel3, setBevitel3] = useState('')
+  const [bevitel4, setBevitel4] = useState('')
+  const [bevitel5, setBevitel5] = useState('')
+
+  const etelek = async () => {
+    try {
+      const response = await fetch(Ipcim.Ipcim + 'etelek');
+      const json = await response.json();
+      setData2(json);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading2(false);
+    }
+  };
+
+  useEffect(() => {
+    etelek();
+  }, []);
+  //ételek backend vége---------
+
   //kép kiválasztás-------
   const handleUploadPhoto = async () => {
     try {
@@ -57,9 +83,17 @@ export default function ImagePickerExample() {
         return;
       }
 
+      const formData = createFormData(image, {
+        bevitel1: bevitel1, 
+        bevitel2: bevitel2, 
+        bevitel3: bevitel3,
+        bevitel4: bevitel4,
+        bevitel5: bevitel5,
+      });
+
       const response = await fetch(`${SERVER_URL}api/upload`, {
         method: 'POST',
-        body: createFormData(image, { bevitel1: '123', bevitel1 }),
+        body: formData,
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -94,7 +128,7 @@ export default function ImagePickerExample() {
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={{padding: 10, fontWeight:"bold"}}>név:</Text>
+      
       <TextInput
         style={{height: 40, margin:5,}}
         placeholder="Adj meg egy nevet!"
@@ -104,9 +138,9 @@ export default function ImagePickerExample() {
 
       <Picker
         style={{ height: 50, width: 150, marginTop:10, marginBottom:10}}
-        selectedValue={selectedEteltipusok}
+        selectedValue={bevitel2}
         onValueChange={(itemValue, itemIndex) =>
-        setSelectedEteltipusok(itemValue)
+        setBevitel2(itemValue)
       }>
       {data.map((item)=>{
         return(
@@ -114,6 +148,27 @@ export default function ImagePickerExample() {
 	      )}
 	    )}
       </Picker>
+
+      <TextInput
+        style={{height: 40, margin:5,}}
+        placeholder="Írj ide hozzávalókat!"
+        onChangeText={newText => setBevitel3(newText)}
+        defaultValue={bevitel3}
+      />
+
+      <TextInput
+        style={{height: 40, margin:5,}}
+        placeholder="Írj ide allergéneket!"
+        onChangeText={newText => setBevitel4(newText)}
+        defaultValue={bevitel4}
+      />
+
+      <TextInput
+        style={{height: 40, margin:5,}}
+        placeholder="Írd le az étel elkészítését!"
+        onChangeText={newText => setBevitel5(newText)}
+        defaultValue={bevitel5}
+      />
 
         <Button title="Kép kiválasztása" onPress={pickImage} />
         <Button title="Fotó feltöltés" onPress={handleUploadPhoto} />

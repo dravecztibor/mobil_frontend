@@ -55,7 +55,7 @@ const App = () => {
 
     <TextInput
         style={{height: 40}}
-        placeholder="Type here to translate!"
+        placeholder="Keresés..."
         onChangeText={newText => setText(newText)}
         defaultValue={text}
     />
