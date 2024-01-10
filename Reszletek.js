@@ -19,6 +19,7 @@ const Ujlap = ({route}) => {
           fontStyle:"italic", 
           fontWeight:"bold",
           color:"darkgreen",
+          textDecorationLine:"underline"
         }}
         >{atkuld2}</Text>
 

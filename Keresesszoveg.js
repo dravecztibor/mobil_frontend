@@ -13,9 +13,11 @@ const App = () => {
       const response = await fetch(Ipcim.Ipcim + "etelek");
       const json = await response.json();
       setData(json);
-    } catch (error) {
+    } 
+    catch (error) {
       console.error(error);
-    } finally {
+    } 
+    finally {
       setLoading(false);
     }
   };

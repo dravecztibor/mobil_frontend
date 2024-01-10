@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Image, View, Text, TextInput,} from 'react-native';
+import { Button, Image, View, Text, TextInput, TouchableOpacity} from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import {Picker} from '@react-native-picker/picker';
-import { Platform } from 'react-native';
 
 import Ipcim from './Ipcim';
 
@@ -75,7 +74,7 @@ export default function ImagePickerExample() {
   }, []);
   //ételek backend vége---------
 
-  //kép kiválasztás-------
+  //kiválasztássok-------
   const handleUploadPhoto = async () => {
     try {
       if (!image) {
@@ -88,7 +87,7 @@ export default function ImagePickerExample() {
         bevitel2: bevitel2, 
         bevitel3: bevitel3,
         bevitel4: bevitel4,
-        bevitel5: bevitel5,
+        bevitel5: bevitel5
       });
 
       const response = await fetch(`${SERVER_URL}api/upload`, {
@@ -104,11 +103,12 @@ export default function ImagePickerExample() {
       }
 
       const data = await response.json();
-      console.log('Sikeres feltöltés', data);
-      alert("Sikeres feltöltés")
-    } catch (error) {
+      const data2 = await response.json();
       console.log('Hiba', error.message);
-      alert("Hiba")
+      alert("Hiba", error.message)
+    } catch (error) {
+      console.log('Sikeres feltöltés', data);
+      alert("Sikeres feltöltés", data)
     }
   };
 
@@ -124,20 +124,20 @@ export default function ImagePickerExample() {
       setImage(result);
     }
   };
-  //kép kiválasztás vége-------
+  //kiválasztássok vége-------
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', }}>
       
       <TextInput
-        style={{height: 40, margin:5,}}
+        style={{height: 40, margin:5, backgroundColor: "lightgrey", padding: 10}}
         placeholder="Adj meg egy nevet!"
         onChangeText={newText => setBevitel1(newText)}
         defaultValue={bevitel1}
       />
 
       <Picker
-        style={{ height: 50, width: 150, marginTop:10, marginBottom:10}}
+        style={{ height: 50, width: 150, marginTop:10, marginBottom:10, backgroundColor: "lightgrey", padding: 10}}
         selectedValue={bevitel2}
         onValueChange={(itemValue, itemIndex) =>
         setBevitel2(itemValue)
@@ -150,28 +150,36 @@ export default function ImagePickerExample() {
       </Picker>
 
       <TextInput
-        style={{height: 40, margin:5,}}
+        style={{height: 40, margin:5, backgroundColor: "lightgrey", padding: 10}}
         placeholder="Írj ide hozzávalókat!"
         onChangeText={newText => setBevitel3(newText)}
         defaultValue={bevitel3}
       />
 
       <TextInput
-        style={{height: 40, margin:5,}}
+        style={{height: 40, margin:5, backgroundColor: "lightgrey"}}
         placeholder="Írj ide allergéneket!"
         onChangeText={newText => setBevitel4(newText)}
         defaultValue={bevitel4}
       />
 
       <TextInput
-        style={{height: 40, margin:5,}}
+        style={{height: 40, margin:5, backgroundColor: "lightgrey"}}
         placeholder="Írd le az étel elkészítését!"
         onChangeText={newText => setBevitel5(newText)}
         defaultValue={bevitel5}
       />
 
-        <Button title="Kép kiválasztása" onPress={pickImage} />
-        <Button title="Fotó feltöltés" onPress={handleUploadPhoto} />
+      <TouchableOpacity onPress={pickImage}>
+        <View style={{backgroundColor: "lightblue", padding: 10, marginBottom: 9, borderRadius: 5, borderWidth: 1}}>
+          <Text style={{fontStyle: "italic", fontWeight: "bold", color: "blue"}}>Kép kiválasztása</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={handleUploadPhoto}>
+        <View style={{backgroundColor:"lightblue", padding: 10, marginBottom: 9, borderRadius: 5, borderWidth: 1}}>
+          <Text style={{fontStyle: "italic", fontWeight: "bold", color: "blue"}}>Feltöltés</Text>
+        </View>
+      </TouchableOpacity>
         
         {image && <Image source={{ uri: image.uri }} style={{ width: 200, height: 200 }} />}
     </View>
