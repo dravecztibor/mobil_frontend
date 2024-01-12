@@ -127,10 +127,15 @@ export default function ImagePickerExample() {
   //kiválasztássok vége-------
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', }}>
+    <View style={{ 
+      flex: 1, 
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: "#f0f8ff"
+    }}>
       
       <TextInput
-        style={{height: 40, margin:5, backgroundColor: "lightgrey", padding: 10}}
+        style={{height: 40, margin:5, backgroundColor: "lightgrey", padding: 10,}}
         placeholder="Adj meg egy nevet!"
         onChangeText={newText => setBevitel1(newText)}
         defaultValue={bevitel1}
@@ -157,14 +162,14 @@ export default function ImagePickerExample() {
       />
 
       <TextInput
-        style={{height: 40, margin:5, backgroundColor: "lightgrey"}}
+        style={{height: 40, margin:5, backgroundColor: "lightgrey", padding: 10,}}
         placeholder="Írj ide allergéneket!"
         onChangeText={newText => setBevitel4(newText)}
         defaultValue={bevitel4}
       />
 
       <TextInput
-        style={{height: 40, margin:5, backgroundColor: "lightgrey"}}
+        style={{height: 40, margin:5, backgroundColor: "lightgrey", padding: 10,}}
         placeholder="Írd le az étel elkészítését!"
         onChangeText={newText => setBevitel5(newText)}
         defaultValue={bevitel5}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet, Image, ScrollView } from 'react-native';
+import { View, Text, Button, StyleSheet, Image, ScrollView, } from 'react-native';
 import Ipcim from './Ipcim';
 import { WebView } from 'react-native-webview';
 
@@ -9,8 +9,8 @@ const Ujlap = ({route}) => {
   return (
     <ScrollView>
       <View style={styles.container}>
-      
-        {/*<Text>{atkuld1}</Text>*/}
+
+      <View style={{borderWidth: 1, marginTop: 10, borderColor: "green"}}/>
 
         <Text 
         style={{
@@ -19,35 +19,40 @@ const Ujlap = ({route}) => {
           fontStyle:"italic", 
           fontWeight:"bold",
           color:"darkgreen",
-          textDecorationLine:"underline"
+          textDecorationLine:"underline",
+          textAlign: "center"
         }}
         >{atkuld2}</Text>
 
 
-        <Text 
-        style={{
+        <Text style={{
           marginTop:10, 
-          marginBottom:5, 
+          marginBottom:5,
           textAlign:"center", 
           fontWeight:"bold", 
           fontStyle:"italic", 
           textDecorationLine:"underline",
-        }}
-        >Hozzávalók:</Text>
-        <Text>{atkuld3}</Text>
-
+        }}>
+          Hozzávalók:
+        </Text>
+        <Text style={{textAlign: "center",}}>{atkuld3}</Text>
         
-        <Text style={{marginTop:10, 
-          marginBottom:5, 
+        
+
+        <Text style={{
+          marginTop:10, 
+          marginBottom:5,
           textAlign:"center", 
           fontWeight:"bold", 
-          fontStyle:"italic",
+          fontStyle:"italic", 
           textDecorationLine:"underline",
-        }}
-        >Allergének:</Text>
-        <Text>{atkuld4}</Text>
+        }}>
+          Allergének:
+        </Text>
+        <Text style={{textAlign: "center"}}>{atkuld4}</Text>
+
         
-        
+
         <Text style={{
           marginTop:10, 
           marginBottom:5,
@@ -59,6 +64,7 @@ const Ujlap = ({route}) => {
         >Elkészítés:</Text>
         <Text>{atkuld5}</Text>
 
+        
 
         <Text style={{
           marginTop:10, 
@@ -66,9 +72,12 @@ const Ujlap = ({route}) => {
           fontWeight:"bold",
           fontStyle:"italic", 
           textDecorationLine:"underline",
+          textAlign: "center"
         }}
         >Videó az elkészítéshez:</Text>
-        <WebView source={{ uri: atkuld6 }} style={{ flex: 1, padding: 150,}}/>
+        <WebView source={{ uri: atkuld6 }} style={{ flex: 1, padding: 100,}}/>
+
+        <View style={{borderWidth: 1, marginTop: 10, borderColor: "green"}}/>
     
 
     </View>
@@ -79,19 +88,14 @@ const Ujlap = ({route}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginLeft: 10,
-    marginRight: 10,
-    marginBottom: 10,
-    marginTop: 10,
-    borderWidth: 3,
-    backgroundColor: "lightgreen",
-    paddingBottom: 10,
-    paddingTop: 10,
-    paddingRight: 10,
+    borderWidth: 1,
+    marginLeft: 20,
+    marginRight: 20,
     paddingLeft: 10,
-    padding: 20,
+    paddingRight: 10,
+    paddingTop: 10,
+    paddingBottom: 10,
+    backgroundColor: "#f0ffff"
   },
 
 });

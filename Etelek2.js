@@ -104,7 +104,7 @@ const Kozosscreen = ({navigation}) => {
 
   return (
     //picker eleje------------
-    <View style={{flex: 1, padding: 24,}}>
+    <View style={{flex: 1, padding: 24, backgroundColor: "#f0ffff"}}>
       <Picker
         style={{textAlign:"center", backgroundColor:"lightgrey", marginBottom:5, marginLeft:20, marginRight:20,}}
         selectedValue={selectedEteltipusok}
