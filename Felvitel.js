@@ -126,12 +126,12 @@ export default function ImagePickerExample() {
   };
   //kiválasztássok vége-------
 
-  return (
+  return ( 
     <View style={{ 
       flex: 1, 
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: "#f0f8ff"
+      backgroundColor: "#adff2f"
     }}>
       
       <TextInput
