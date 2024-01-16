@@ -89,8 +89,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     borderWidth: 1,
-    marginLeft: 20,
-    marginRight: 20,
+    marginLeft: 30,
+    marginRight: 30,
     paddingLeft: 10,
     paddingRight: 10,
     paddingTop: 10,
