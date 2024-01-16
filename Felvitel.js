@@ -176,7 +176,7 @@ export default function ImagePickerExample() {
       />
 
       <TouchableOpacity onPress={pickImage}>
-        <View style={{backgroundColor: "lightblue", padding: 10, marginBottom: 9, borderRadius: 5, borderWidth: 1}}>
+        <View style={{backgroundColor: "lightblue", padding: 10, marginBottom: 9, marginTop: 10, borderRadius: 5, borderWidth: 1}}>
           <Text style={{fontStyle: "italic", fontWeight: "bold", color: "blue"}}>Kép kiválasztása</Text>
         </View>
       </TouchableOpacity>

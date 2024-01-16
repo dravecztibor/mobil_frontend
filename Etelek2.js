@@ -105,6 +105,9 @@ const Kozosscreen = ({navigation}) => {
   return (
     //picker eleje------------
     <View style={{flex: 1, padding: 24, backgroundColor: "#adff2f",}}>
+
+      <View style={{borderWidth: 1, marginBottom:20, borderColor: "green",}}/>
+
       <Picker
         style={{textAlign:"center", backgroundColor:"lightgrey", marginBottom:5, marginLeft:20, marginRight:20,}}
         selectedValue={selectedEteltipusok}
@@ -129,7 +132,7 @@ const Kozosscreen = ({navigation}) => {
       </TouchableOpacity>
       {/*picker vége------------*/}
 
-      <View style={{borderWidth:1, borderColor:"grey", marginTop:10, marginBottom:20}}/>
+      <View style={{borderWidth: 1, borderColor: "green", marginTop:10, marginBottom:20}}/>
 
       {/*keresésmező eleje------------*/}
       <TextInput
@@ -145,6 +148,8 @@ const Kozosscreen = ({navigation}) => {
       </View>
     </TouchableOpacity>
     {/*keresésmező vége------------*/}
+
+    <View style={{borderWidth: 1, borderColor: "green", marginTop:10, marginBottom:20}}/>
 
       {isLoading ? (
         <ActivityIndicator />
